@@ -1,0 +1,31 @@
+﻿<?xml version="1.0"?>
+<package  xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>    
+    <id>GBMProyect</id>
+    <version>0.1</version>
+    <title>GBM Client for the mexican broker</title>
+    <authors>Raul Sosa</authors>
+    <owners>Raul Sosa</owners>
+    <license type="file">https://github.com/RaulS0sa/GBMRepo/blob/main/LICENSE</license>
+    <projectUrl>https://github.com/RaulS0sa/GBMRepo</projectUrl>
+    <icon>https://i.ibb.co/Xt48tKJ/GBMLib-Icon.png</icon>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A Client Library to set order to the mexican Broker GBM</description>
+    <releaseNotes>Initial Commit</releaseNotes>
+    <copyright>2021 Raul Sosa</copyright>
+    <tags></tags>
+   <dependencies>
+      <group targetFramework=".NETFramework4.7.2" />
+     
+      <group targetFramework=".NETStandard2.0" />
+     <!--.NETStandard2.0
+      <dependency id="Newtonsoft.Json" version="12.0.3"  />
+      <dependency id="Newtonsoft.Json" version="3.3.0"  />
+   -->
+    </dependencies>
+    <summary></summary>
+  </metadata>
+  <files>
+    <file src="readme.md" target="" />
+  </files>
+</package>

@@ -1,0 +1,8 @@
+C:\Users\RaulS\Documents\GitHub\GBMProyect\GBMRepo\GBMProyect\GBMProyect\bin\Debug\netstandard2.0\GBMProyect.deps.json
+C:\Users\RaulS\Documents\GitHub\GBMProyect\GBMRepo\GBMProyect\GBMProyect\bin\Debug\netstandard2.0\GBMProyect.dll
+C:\Users\RaulS\Documents\GitHub\GBMProyect\GBMRepo\GBMProyect\GBMProyect\obj\Debug\netstandard2.0\GBMProyect.csprojAssemblyReference.cache
+C:\Users\RaulS\Documents\GitHub\GBMProyect\GBMRepo\GBMProyect\GBMProyect\obj\Debug\netstandard2.0\GBMProyect.AssemblyInfoInputs.cache
+C:\Users\RaulS\Documents\GitHub\GBMProyect\GBMRepo\GBMProyect\GBMProyect\obj\Debug\netstandard2.0\GBMProyect.AssemblyInfo.cs
+C:\Users\RaulS\Documents\GitHub\GBMProyect\GBMRepo\GBMProyect\GBMProyect\bin\Debug\netstandard2.0\GBMProyect.pdb
+C:\Users\RaulS\Documents\GitHub\GBMProyect\GBMRepo\GBMProyect\GBMProyect\obj\Debug\netstandard2.0\GBMProyect.dll
+C:\Users\RaulS\Documents\GitHub\GBMProyect\GBMRepo\GBMProyect\GBMProyect\obj\Debug\netstandard2.0\GBMProyect.pdb
