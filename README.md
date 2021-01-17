@@ -1,6 +1,10 @@
 # GBMRepo
  This Is A Library To comunicate with GBM Broker through C# 
  
+ Include The GBM namespace in your project
+  ```
+using GBMProyect;
+ ```
  Instance of the class:
  ```
  var Trader = new GBM("userEmail", "Password", "Client ID", "Contract ID");
