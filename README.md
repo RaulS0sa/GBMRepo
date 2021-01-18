@@ -28,7 +28,15 @@ TraderObj = GBM("Mymail@mail.com","my_password", "clientID", "contractID")
 AmILogged = False
 while True:
     BMVMovers = TraderObj.GetNationalMarketMovers()
+    #NYCEMovers = TraderObj.GetGlobalMarketMovers()
     if BMVMovers is not None:
+    
+        ##CancelPendingOrders
+        #PendingOrders = Trader.GetOrdersByState(GBM.OrderState.Pending)
+        #for i in PendingOrders:
+        #    Vigencia = True if i["orderId"] == 0 else False
+        #    OrdenTag = i["orderLifeId"] if i["orderId"] == 0 else i["orderId"]
+        #    CancelationExecuted = TraderObj.CancelOrder(OrdenTag, Vigencia)
 
         # GetTickerHistorical can return None if the Ticker names is misspeled
         # or you are not logged in
