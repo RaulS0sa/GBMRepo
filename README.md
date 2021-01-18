@@ -11,7 +11,8 @@
  
  ![alt text](https://i.ibb.co/r4LJ0fr/ClientID.png)
  
- ![alt text](https://i.ibb.co/f9N5F8j/Contract-ID.png)
+ ![alt text](https://i.ibb.co/XSDB8H7/Contract-ID.png)
+ 
  
  How Do You use it (Python sample):
  
