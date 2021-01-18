@@ -32,7 +32,7 @@ while True:
     if BMVMovers is not None:
     
         ##CancelPendingOrders
-        #PendingOrders = Trader.GetOrdersByState(GBM.OrderState.Pending)
+        #PendingOrders = TraderObj.GetOrdersByState(GBM.OrderState.Pending)
         #for i in PendingOrders:
         #    Vigencia = True if i["orderId"] == 0 else False
         #    OrdenTag = i["orderLifeId"] if i["orderId"] == 0 else i["orderId"]
