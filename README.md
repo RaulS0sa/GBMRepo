@@ -2,6 +2,8 @@
  This Is A Library To comunicate with GBM Broker through C# 
  
  Include The GBM namespace in your project
+ 
+ https://pypi.org/project/GBMProyect/0.0.1/
   ```
 using GBMProyect;
  ```
