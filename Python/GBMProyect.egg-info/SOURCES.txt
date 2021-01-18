@@ -1,0 +1,9 @@
+README.md
+setup.py
+GBMProyect/GBMProyect.py
+GBMProyect/__init__.py
+GBMProyect.egg-info/PKG-INFO
+GBMProyect.egg-info/SOURCES.txt
+GBMProyect.egg-info/dependency_links.txt
+GBMProyect.egg-info/requires.txt
+GBMProyect.egg-info/top_level.txt
