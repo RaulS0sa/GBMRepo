@@ -1,8 +1,8 @@
 # GBMRepo
- This Is A Library To comunicate with GBM Broker through C# 
+ This Is A Library To comunicate with the GBM Broker through C# 
  
  
- Link To libraries:
+ Links To libraries:
  
  https://www.nuget.org/packages/GBMProyect/
  
@@ -39,7 +39,7 @@ while True:
         #    OrdenTag = i["orderLifeId"] if i["orderId"] == 0 else i["orderId"]
         #    CancelationExecuted = TraderObj.CancelOrder(OrdenTag, Vigencia)
 
-        # GetTickerHistorical can return None if the Ticker names is misspeled
+        # GetTickerHistorical can return None if the Ticker names is misspelled
         # or you are not logged in
         TickerData = TraderObj.GetTickerHistorical("AMX L", 20)
 
