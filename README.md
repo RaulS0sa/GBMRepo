@@ -1,8 +1,8 @@
 # GBMRepo
  This Is A Library To comunicate with GBM Broker through C# 
  
- Include The GBM namespace in your project
- Link To libraries
+ 
+ Link To libraries:
  
  https://www.nuget.org/packages/GBMProyect/
  
