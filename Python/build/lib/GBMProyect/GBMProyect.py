@@ -22,6 +22,71 @@ class GBM():
             return True
         else:
             return False
+    def GetWithDrawalAmount(self, ContractID):
+        if ContractID is not None:
+            WebServiceURL = "https://homebroker-api.gbm.com/GBMP/api/" \
+                            + "Operation" \
+                            + "/GetWithdrawalAmount"
+            DataStream = {"contractId": ContractID}
+            Response = self.__GenerateRequest(WebServiceURL, DataStream, None)
+            if Response:
+                return Response
+            else:
+                return None
+        else:
+            return None
+    def FetchStateOfTransfer(self,SmartCashID, TransferID):
+        MainContractRequest = self.__GetMainContract()
+        if MainContractRequest is not None:
+            WebServiceURL = "https://api.gbm.com/v1/contracts/" \
+                            + MainContractRequest \
+                            + "/accounts/" \
+                            + SmartCashID \
+                            + "/cash-transactions"
+            Response = self.__Generate_GET_Request(WebServiceURL, None)
+            if Response:
+                ArrayOfTransactions = Response["items"]
+                for Transaction in ArrayOfTransactions:
+                    if Transaction["transfer_id"] == TransferID:
+                        return Transaction
+                return None
+        else:
+            return None
+    def Transfer(self, Amount, Origin, Destiny):
+        MainContractRequest = self.__GetMainContract()
+        if MainContractRequest is not None:
+            WebServiceURL = "https://api.gbm.com/v1/contracts/" \
+                            + MainContractRequest \
+                            + "/accounts/" \
+                            + Origin \
+                            + "/transfers"
+            DataStream = {"amount": Amount, "target_account_id": Destiny}
+            Response = self.__GenerateRequest(WebServiceURL, DataStream, None)
+            if Response:
+                return Response
+            else:
+                return None
+        else:
+            return None
+    def GetContracts(self)-> dict:
+        MainContractRequest = self.__GetMainContract()
+        if MainContractRequest is not None:
+            WebServiceURL = "https://api.gbm.com/v2/contracts/" + MainContractRequest + "/accounts"
+            Response = self.__Generate_GET_Request(WebServiceURL, None)
+            if Response:
+                response_dict = {element["name"]: element for element in Response}
+                return response_dict
+            else:
+                return None
+        else:
+            return None
+    def __GetMainContract(self) -> str:
+        WebServiceURL = "https://api.gbm.com/v1/contracts"
+        Response = self.__Generate_GET_Request(WebServiceURL, None)
+        if Response:
+            return Response[0]["contract_id"]
+        else:
+            return None
     def GetNationalMarketMovers(self):
         WebServiceURL = "https://homebroker-api.gbm.com/GBMP/api/Market/GetLowRiseIssuesByBenchmark"
         DataStream = {"request": 1}
@@ -174,6 +239,23 @@ class GBM():
             self.Median = 0
             self.WeigthedMedian = 0
             self.CurrentPrice = 0
+    def __Generate_GET_Request(self,WebServiceURL, HeadersDict ) -> dict:
+        if HeadersDict == None:
+            HeadersDict = dict()
+            HeadersDict["Authorization"] = "Bearer " + self.BearerKey
+            HeadersDict["Accept-Encoding"] = "identity"
+            HeadersDict["Device-Type"] = "Mi A2 Lite"
+            HeadersDict["Os-version"] = "Android 29"
+            HeadersDict["App-version"] = "60"
+            HeadersDict["Platform"] = "android"
+            HeadersDict["User-agent"] = "okhttp/3.10.0"
+            # HeadersDict["Accept"] = "application/json"
+            HeadersDict["Content-Type"] = "application/json"
+        response = requests.get(WebServiceURL, headers=HeadersDict)
+        if(response.status_code == 200):
+            JResponse = response.json()
+            return JResponse
+        return dict()
     def __GenerateRequest(self,WebServiceURL, Body, HeadersDict ) -> dict:
         if HeadersDict == None:
             HeadersDict = dict()
@@ -187,7 +269,7 @@ class GBM():
             # HeadersDict["Accept"] = "application/json"
             HeadersDict["Content-Type"] = "application/json"
         response = requests.post(WebServiceURL, json=Body, headers=HeadersDict)
-        if(response.status_code == 200):
+        if(response.status_code == 200) or (response.status_code == 201):
             JResponse = response.json()
             return JResponse
         return dict()
