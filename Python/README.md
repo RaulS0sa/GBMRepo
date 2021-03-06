@@ -9,6 +9,29 @@ using GBMProyect;
  ```
  var Trader = new GBM("userEmail", "Password", "Client ID", "Contract ID");
  ```
+ 
+ Transfer Money Between Accounts:
+  ```
+   Contracts = TraderObj.GetContracts()
+   
+   TransferRespone = Trader.Transfer(50, #Ammount To Transfer
+                                        Contracts["Smart Cash"]["account_id"], #Origin Acount
+                                        Contracts["Trading"]["account_id"]) #Destiny Account
+        
+   TransferRespone = TraderObj.Transfer(10,  # Ammount To Transfer
+                                        Contracts["Trading"]["account_id"],
+                                        Contracts["Smart Cash"]["account_id"])
+   TransferData = TraderObj.FetchStateOfTransfer(Contracts["Smart Cash"]["account_id"], TransferRespone["id"])
+
+   if TransferData["transaction_status"] == "pending":
+        print("Yikes!")
+
+   WithDrawalData = TraderObj.GetWithDrawalAmount(TraderObj.ContractID) #This Works with  your contract ID str ex: "AB1234"
+   
+   print("Funds Available: " + WithDrawalData["realWithdrawalAmount"])
+ ```
+ 
+ 
  Cancel any existing orders:
 ```
  // Cancel any existing orders
